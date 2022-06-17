@@ -36,7 +36,7 @@ msg.add_alternative("""\
 
 
 # now open the image and attach it to the email
-with open('path/to/image.jpg', 'rb') as img:
+with open('messages/inbox/anna_d0ta1k5dmg/photos/276984346_841199023342026_4314358027647997904_n_841199016675360.jpg', 'rb') as img:
 
     # know the Content-Type of the image
     maintype, subtype = mimetypes.guess_type(img.name)[0].split('/')
@@ -46,3 +46,5 @@ with open('path/to/image.jpg', 'rb') as img:
                                          maintype=maintype, 
                                          subtype=subtype, 
                                          cid=image_cid)
+with open('mailattached.eml', 'wb') as f:
+    f.write(str(msg).encode('utf-8'))
